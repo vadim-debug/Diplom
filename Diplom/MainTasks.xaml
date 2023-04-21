@@ -1,0 +1,54 @@
+﻿<Page x:Class="Diplom.MainTasks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="MainTasks" Background="white" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="253*"/>
+            <RowDefinition Height="81*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="272,10,0,0" TextWrapping="Wrap" Text="Секретарь" VerticalAlignment="Top" Width="129" FontSize="24" Height="50"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,39,0,0" TextWrapping="Wrap" Text="Menu
+                   " VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="22" Height="29" Width="177"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,670,0" Grid.RowSpan="2">
+            <Button Content="Список дел" x:Name="AllTask" Click="AllTask_Click" Width="110" HorizontalAlignment="Center" Margin="0,10" Height="40"/>
+            <Button Content="Встреча" x:Name="btnTask1" Click="btnTask1_Click" Width="110" HorizontalAlignment="Center"  Margin="0,10" Height="40"/>
+            <Button Content="Звонок" x:Name="btnTask2" Click="btnTask2_Click" Width="110" HorizontalAlignment="Center" Margin="0,10" Height="40"/>
+            <Button Content="Собрание" x:Name="btnTask3" Click="btnTask3_Click"  Width="110" HorizontalAlignment="Center" Margin="0,10" Height="40"/>
+            <Button Content="Сотрудники" Width="110" HorizontalAlignment="Center" x:Name="BtnWorker" Click="BtnWorker_Click" VerticalAlignment="Top" Margin="0,10" Height="40"/>
+        </StackPanel>
+
+        <DataGrid  Name="DTGridClient" ColumnWidth="*" Grid.Column="1" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" Grid.RowSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Info}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сотрудник" Binding="{Binding User.Password}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип задачи" Binding="{Binding TaskType.Name}"></DataGridTextColumn>
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="1" x:Name="BtnRemove" Click="BtnRemove_Click" Content="Удалить" HorizontalAlignment="Left" Margin="572,65,0,0" VerticalAlignment="Top" Height="32" Width="84"/>
+        <Button Grid.Column="1" x:Name="BtnAdd" Click="BtnAdd_Click" Content="Создать" HorizontalAlignment="Left" Margin="428,66,0,0" VerticalAlignment="Top" Height="32" Width="84"/>
+        <ComboBox materialDesign:HintAssist.Hint="Приоритет" Grid.Column="1" x:Name="cmbPriority" DisplayMemberPath="Name" SelectionChanged="cmbPriority_SelectionChanged" HorizontalAlignment="Left" Margin="9,70,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox materialDesign:HintAssist.Hint="Дата" Grid.Column="1" x:Name="txtWorker" TextChanged="txtWorker_TextChanged" HorizontalAlignment="Left" Margin="165,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button Grid.Column="1" x:Name="BtnBack" Click="BtnBack_Click"  Content="Назад" HorizontalAlignment="Left" Margin="524,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="39" Width="90"/>
+
+
+    </Grid>
+</Page>

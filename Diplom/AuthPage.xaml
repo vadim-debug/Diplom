@@ -1,0 +1,20 @@
+﻿<Page x:Class="Diplom.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="AuthPage" Background="white">
+
+    <Grid>
+        <TextBox materialDesign:HintAssist.Hint="Логин: " x:Name="txtLogin" HorizontalAlignment="Left" Margin="280,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox materialDesign:HintAssist.Hint="Пароль:" x:Name="txtPass" HorizontalAlignment="Left" Margin="280,261,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button Content="Войти" Name="BtnAuth" Click="BtnAuth_Click" HorizontalAlignment="Left" Margin="263,374,0,0" VerticalAlignment="Top" Height="39" Width="179"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,86,0,0" TextWrapping="Wrap" Text="Авторизация" VerticalAlignment="Top" Height="75" Width="314" FontSize="36"/>
+        <Button Content="Регистрация" Name="BtnToRegPage" Click="BtnToRegPage_Click" HorizontalAlignment="Left" Margin="580,208,0,0" VerticalAlignment="Top" Height="62" Width="115"/>
+
+    </Grid>
+</Page>
