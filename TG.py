@@ -3,6 +3,7 @@ import settings
 from telebot import types
 import sqlite3 as sq
 
+Info =""
 bot = telebot.TeleBot(settings.API_KEY)
 
 @bot.message_handler(commands = ['start'])
@@ -51,5 +52,30 @@ def GetGit(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton("Проект на GitHub", url="https://github.com/vadim-debug/Diplom"))
     bot.send_message(message.chat.id,"Кабан",reply_markup=markup)
+
+@bot.message_handler(commands = ['Add'])
+def AddTask(message):
+
+    table = bot.send_message(message.chat.id, 'Вы зашли в блок Добавления, укажите полную инормацию о задаче согласно шаблону(ШАБЛОН), если хотите выйти, напишите Выход')
+    bot.register_next_step_handler(table, AddTable)
+
+def AddTable(message):
+    if(message.text=="Выход"):
+        bot.send_message(message.chat.id, 'Вы вышли из добавления')
+    else:
+        TableInform = message.text
+        LInfo = TableInform.split(';')
+
+        with sq.connect("Diplom/My.db") as con:
+            cur = con.cursor()
+            cur.execute('SELECT * FROM Tasks ORDER BY ID DESC LIMIT 1')
+            result = cur.fetchone()
+
+            TaskId = result[0]+1
+            stroke = f"INSERT INTO Tasks VALUES({TaskId},'{LInfo[0]}','{LInfo[1]}','{LInfo[2]}','{LInfo[3]}','{LInfo[4]}')"
+
+            cur = con.cursor()
+            cur.execute(stroke)
+            con.commit()
 
 bot.polling(none_stop=True)
