@@ -16,12 +16,9 @@ namespace Diplom
         public virtual Role Role { get; set; }
         public User()
         {
-
-        }   
-            
+        }    
         public User( string Login, string Password,int Role_Id)
         {
-           
             this.Login = Login;
             this.Password = Password;
             this.Role_Id = Role_Id;    

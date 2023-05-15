@@ -34,7 +34,7 @@ namespace Diplom
              BtnRemove.Visibility = Visibility.Hidden;   
              BtnWorker.Visibility = Visibility.Hidden;   
             }
-
+            
             List<Task> Tasks = db.Tasks.ToList();
             DTGridClient.ItemsSource = Tasks;
             cmbPriority.ItemsSource = db.Priorities.ToList();

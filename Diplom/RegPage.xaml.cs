@@ -12,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-
 namespace Diplom
 {
     /// <summary>
@@ -25,9 +23,6 @@ namespace Diplom
         public RegPage()
         {
             InitializeComponent();
-
-            
-            
         }
 
         private void Regbtn_Click(object sender, RoutedEventArgs e)
@@ -40,7 +35,7 @@ namespace Diplom
             {
                 db.Users.Add(user);
                 db.SaveChanges();
-                MessageBox.Show("Good");
+                MessageBox.Show("Успешно");
                 NavigationService.Navigate(new AuthPage());
             }
            
@@ -55,5 +50,8 @@ namespace Diplom
         {
             NavigationService.Navigate(new AuthPage());
         }
+
+      
+
     }
 }

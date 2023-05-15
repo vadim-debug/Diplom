@@ -53,5 +53,10 @@ namespace Diplom
         {
             NavigationService.Navigate(new RegPage());
         }
+
+        private void BtnGuest_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainTasks(1));
+        }
     }
 }

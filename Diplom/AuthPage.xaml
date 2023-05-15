@@ -10,11 +10,12 @@
       Title="AuthPage" Background="white">
 
     <Grid>
-        <TextBox materialDesign:HintAssist.Hint="Логин: " x:Name="txtLogin" HorizontalAlignment="Left" Margin="280,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox materialDesign:HintAssist.Hint="Пароль:" x:Name="txtPass" HorizontalAlignment="Left" Margin="280,261,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Content="Войти" Name="BtnAuth" Click="BtnAuth_Click" HorizontalAlignment="Left" Margin="263,374,0,0" VerticalAlignment="Top" Height="39" Width="179"/>
+        <TextBox materialDesign:HintAssist.Hint="Логин: " x:Name="txtLogin" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <TextBox materialDesign:HintAssist.Hint="Пароль:" x:Name="txtPass" HorizontalAlignment="Left" Margin="250,254,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <Button Content="Войти" Name="BtnAuth" Click="BtnAuth_Click" HorizontalAlignment="Left" Margin="250,336,0,0" VerticalAlignment="Top" Height="39" Width="180"/>
         <TextBlock HorizontalAlignment="Left" Margin="190,86,0,0" TextWrapping="Wrap" Text="Авторизация" VerticalAlignment="Top" Height="75" Width="314" FontSize="36"/>
-        <Button Content="Регистрация" Name="BtnToRegPage" Click="BtnToRegPage_Click" HorizontalAlignment="Left" Margin="580,208,0,0" VerticalAlignment="Top" Height="62" Width="115"/>
+        <Button Content="Регистрация" Name="BtnToRegPage" Click="BtnToRegPage_Click" HorizontalAlignment="Left" Margin="508,175,0,0" VerticalAlignment="Top" Height="50" Width="153"/>
+        <Button Content="Войти как гость" x:Name="BtnGuest" Click="BtnGuest_Click" HorizontalAlignment="Left" Margin="508,283,0,0" VerticalAlignment="Top" Height="44" Width="152"/>
 
     </Grid>
 </Page>

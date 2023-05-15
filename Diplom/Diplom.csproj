@@ -90,6 +90,7 @@
     <Compile Include="AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="Example.xaml.cs">
       <DependentUpon>Example.xaml</DependentUpon>
     </Compile>
